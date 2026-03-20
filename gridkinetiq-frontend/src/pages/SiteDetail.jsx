@@ -196,7 +196,9 @@ export default function SiteDetail({ onMenuClick }) {
                   {dev.type === 'BATTERY_MODULE' ? `${dev.socPercent?.toFixed(1)}%` : '--'}
                 </span>
                 <span className="mono" style={{ fontSize: 12 }}>{formatPower(dev.powerKw)}</span>
-                <span className="mono" style={{ fontSize: 12 }}>{dev.tempCelsius?.toFixed(1)}°C</span>
+                <span className="mono" style={{ fontSize: 12 }}>
+                  {(dev.type === 'BATTERY_MODULE' || dev.type === 'INVERTER') ? `${dev.tempCelsius?.toFixed(1)}°C` : '--'}
+                </span>
                 <span style={{ color: statusColor(dev.status), fontSize: 11, fontFamily: 'var(--font-mono)' }}>{dev.status}</span>
               </div>
             ))}

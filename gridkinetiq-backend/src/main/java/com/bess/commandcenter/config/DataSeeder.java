@@ -147,7 +147,7 @@ public class DataSeeder implements CommandLineRunner {
                 .socPercent(0)
                 .powerKw(0)
                 .voltageV(13800)
-                .tempCelsius(22)
+                .tempCelsius(0)
                 .lastSeenAt(Instant.now())
                 .createdAt(Instant.now())
                 .build());
