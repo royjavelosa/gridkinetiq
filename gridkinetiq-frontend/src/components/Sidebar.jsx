@@ -40,6 +40,14 @@ export default function Sidebar({ isOpen, onClose }) {
             v{__APP_VERSION__}
           </span>
         </div>
+        <a
+          href="https://www.linkedin.com/in/royjavelosa/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.builtBy}
+        >
+          Built ⚡ by Roy Javelosa
+        </a>
       </div>
     </aside>
   )
