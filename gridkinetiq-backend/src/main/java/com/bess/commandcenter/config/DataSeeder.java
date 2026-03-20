@@ -37,7 +37,7 @@ public class DataSeeder implements CommandLineRunner {
     private void seedSites() {
         List<SiteSeed> seeds = List.of(
             new SiteSeed("Chula Vista Energy Center", "Chula Vista, CA", "America/Los_Angeles", 32.6401, -117.0842, 4000, Site.DispatchState.DISCHARGING, 72.4),
-            new SiteSeed("San Diego Grid Support", "San Diego, CA", "America/Los_Angeles", 32.7157, -117.1611, 2000, Site.DispatchState.CHARGING, 45.1),
+            new SiteSeed("Bethlehem Grid Support", "Bethlehem, PA", "America/New_York", 40.6259, -75.3705, 2000, Site.DispatchState.CHARGING, 45.1),
             new SiteSeed("Austin Frequency Reg", "Austin, TX", "America/Chicago", 30.2672, -97.7431, 6000, Site.DispatchState.STANDBY, 88.3),
             new SiteSeed("Waratah Super Battery", "New South Wales, AU", "Australia/Sydney", -32.7682, 151.5700, 17000, Site.DispatchState.DISCHARGING, 61.7),
             new SiteSeed("Phoenix Solar+Storage", "Phoenix, AZ", "America/Phoenix", 33.4484, -112.0740, 8000, Site.DispatchState.CHARGING, 33.2),
