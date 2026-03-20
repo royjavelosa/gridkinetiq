@@ -1,16 +1,61 @@
-# React + Vite
+# GridKinetiq Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite frontend for the GridKinetiq fleet management dashboard.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## Versioning
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project uses **[semantic-release](https://semantic-release.gitbook.io/)** with **Conventional Commits**. Every push to `main` automatically determines the version bump based on your commit message prefix.
 
-## Expanding the ESLint configuration
+### Commit message format
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+<type>: <short description>
+```
+
+| Prefix | Version bump | Example |
+|---|---|---|
+| `feat:` | minor `1.X.0` | `feat: add battery status chart` |
+| `fix:` | patch `1.0.X` | `fix: correct voltage calculation` |
+| `chore:`, `docs:`, `style:`, `refactor:`, `test:` | none | `chore: update dependencies` |
+| `feat!:` or `BREAKING CHANGE:` in body | major `X.0.0` | see below |
+
+### Forcing a major bump
+
+Add `BREAKING CHANGE:` to the commit body:
+
+```
+feat: redesign fleet API
+
+BREAKING CHANGE: removed /devices endpoint, use /fleet instead
+```
+
+Or use the shorthand `!` after the type:
+
+```
+feat!: redesign fleet API
+```
+
+### First-time setup
+
+When setting up on a new repo, create an initial git tag so semantic-release has a baseline:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+### How it works
+
+On every push to `main` the GitHub Actions workflow:
+1. Runs `semantic-release` — analyzes commits since the last tag, bumps `package.json`, commits back with `[skip ci]`, and creates a GitHub Release with a changelog
+2. Builds the app — the new version is baked in at build time via `__APP_VERSION__` and shown in the sidebar
+3. Deploys to S3
+
+The version displayed in the app (bottom-left of the sidebar) always reflects the version that was current at build time.

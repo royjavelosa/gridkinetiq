@@ -36,7 +36,7 @@ export default function Sidebar() {
       <div className={styles.footer}>
         <div className={styles.version}>
           <span className="mono" style={{ color: 'var(--text-muted)', fontSize: 10 }}>
-            v1.0.0-demo
+            v{__APP_VERSION__}
           </span>
         </div>
       </div>
