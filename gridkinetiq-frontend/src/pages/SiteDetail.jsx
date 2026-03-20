@@ -19,7 +19,7 @@ export default function SiteDetail() {
   const [telemetry, setTelemetry] = useState([])
   const [commands, setCommands] = useState([])
   const [dispatching, setDispatching] = useState(false)
-  const [selectedCmd, setSelectedCmd] = useState('CHARGE')
+  const [selectedCmd, setSelectedCmd] = useState(null)
   const [cmdResult, setCmdResult] = useState(null)
 
   const fetchAll = async () => {
@@ -151,11 +151,11 @@ export default function SiteDetail() {
               <button
                 className={styles.dispatchBtn}
                 onClick={handleDispatch}
-                disabled={dispatching}
+                disabled={dispatching || !selectedCmd}
                 style={selectedCmd === 'EMERGENCY_STOP' ? { background: 'var(--red)', borderColor: 'var(--red)' } : {}}
               >
                 <Send size={13} />
-                {dispatching ? 'Dispatching...' : `Dispatch ${selectedCmd}`}
+                {dispatching ? 'Dispatching...' : selectedCmd ? `Dispatch ${selectedCmd}` : 'Select a command'}
               </button>
               {cmdResult && (
                 <div className={styles.cmdResult} style={{ color: cmdResult.ok ? 'var(--green)' : 'var(--red)' }}>
