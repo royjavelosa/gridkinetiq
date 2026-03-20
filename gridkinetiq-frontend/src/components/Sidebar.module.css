@@ -19,7 +19,7 @@
 
 .logoText {
   font-family: var(--font-condensed);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: 0.05em;
   color: var(--text);
@@ -47,7 +47,7 @@
   font-weight: 500;
   transition: all 0.15s ease;
   font-family: var(--font-condensed);
-  font-size: 15px;
+  font-size: 17px;
   letter-spacing: 0.03em;
 }
 
@@ -68,7 +68,7 @@
 
 .builtBy {
   display: block;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--text-muted);
   transition: color 0.15s ease;
   margin-top: 3px;
