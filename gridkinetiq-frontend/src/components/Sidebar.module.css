@@ -44,11 +44,10 @@
   padding: 9px 12px;
   border-radius: 6px;
   color: var(--text-muted);
-  font-size: 13px;
   font-weight: 500;
   transition: all 0.15s ease;
   font-family: var(--font-condensed);
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 0.03em;
 }
 
@@ -65,15 +64,14 @@
 .footer {
   padding: 16px 20px;
   border-top: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
 }
 
 .builtBy {
-  font-size: 10px;
+  display: block;
+  font-size: 11px;
   color: var(--text-muted);
   transition: color 0.15s ease;
+  margin-top: 3px;
 }
 
 .builtBy:hover {

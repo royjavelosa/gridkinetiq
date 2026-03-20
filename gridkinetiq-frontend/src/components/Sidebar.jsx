@@ -14,7 +14,17 @@ export default function Sidebar({ isOpen, onClose }) {
     <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
       <div className={styles.logo}>
         <Zap size={20} color="var(--orange)" strokeWidth={2.5} />
-        <span className={styles.logoText}>Grid<span className={styles.logoAccent}>Kinetiq</span></span>
+        <div>
+          <span className={styles.logoText}>Grid<span className={styles.logoAccent}>Kinetiq</span></span>
+          <a
+            href="https://www.linkedin.com/in/royjavelosa/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.builtBy}
+          >
+            Built ⚡ by Roy Javelosa
+          </a>
+        </div>
       </div>
 
       <nav className={styles.nav}>
@@ -35,19 +45,9 @@ export default function Sidebar({ isOpen, onClose }) {
       </nav>
 
       <div className={styles.footer}>
-        <div className={styles.version}>
-          <span className="mono" style={{ color: 'var(--text-muted)', fontSize: 10 }}>
-            v{__APP_VERSION__}
-          </span>
-        </div>
-        <a
-          href="https://www.linkedin.com/in/royjavelosa/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.builtBy}
-        >
-          Built ⚡ by Roy Javelosa
-        </a>
+        <span className="mono" style={{ color: 'var(--text-muted)', fontSize: 11 }}>
+          v{__APP_VERSION__}
+        </span>
       </div>
     </aside>
   )
