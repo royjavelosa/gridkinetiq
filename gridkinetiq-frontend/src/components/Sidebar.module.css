@@ -1,0 +1,68 @@
+.sidebar {
+  width: 200px;
+  min-width: 200px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.logoText {
+  font-family: var(--font-condensed);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+
+.logoAccent {
+  color: var(--orange);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 10px;
+  gap: 2px;
+  flex: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  font-family: var(--font-condensed);
+  font-size: 14px;
+  letter-spacing: 0.03em;
+}
+
+.navItem:hover {
+  color: var(--text);
+  background: var(--surface3);
+}
+
+.navItem.active {
+  color: var(--orange);
+  background: var(--orange-dim);
+}
+
+.footer {
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
+}
