@@ -193,7 +193,7 @@ export default function SiteDetail({ onMenuClick }) {
                 <span className={styles.devType}>{dev.type?.replace('_', ' ')}</span>
                 <span className="mono" style={{ fontSize: 11, color: 'var(--text-muted)' }}>{dev.protocol}</span>
                 <span className="mono" style={{ color: socColor(dev.socPercent), fontSize: 12 }}>
-                  {dev.type === 'METER' ? '--' : `${dev.socPercent?.toFixed(1)}%`}
+                  {dev.type === 'BATTERY_MODULE' ? `${dev.socPercent?.toFixed(1)}%` : '--'}
                 </span>
                 <span className="mono" style={{ fontSize: 12 }}>{formatPower(dev.powerKw)}</span>
                 <span className="mono" style={{ fontSize: 12 }}>{dev.tempCelsius?.toFixed(1)}°C</span>

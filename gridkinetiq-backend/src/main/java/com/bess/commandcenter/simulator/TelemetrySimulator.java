@@ -153,8 +153,10 @@ public class TelemetrySimulator {
         for (Device device : devices) {
             if (device.getStatus() == Device.DeviceStatus.OFFLINE) continue;
 
-            double socDelta = (random.nextDouble() - 0.5) * (mode == SimulatorConfig.SimulatorMode.LIVE ? 2.0 : 0.3);
-            device.setSocPercent(clamp(device.getSocPercent() + socDelta, 10, 98));
+            if (device.getType() == Device.DeviceType.BATTERY_MODULE) {
+                double socDelta = (random.nextDouble() - 0.5) * (mode == SimulatorConfig.SimulatorMode.LIVE ? 2.0 : 0.3);
+                device.setSocPercent(clamp(device.getSocPercent() + socDelta, 10, 98));
+            }
             device.setPowerKw(round(site.getPowerKw() / Math.max(devices.size(), 1) + (random.nextDouble() - 0.5) * 5));
             device.setTempCelsius(round(site.getTempCelsius() + (random.nextDouble() - 0.5) * 2));
             device.setVoltageV(round(site.getVoltageV() + (random.nextDouble() - 0.5) * 5));
