@@ -1,6 +1,6 @@
 .sidebar {
-  width: 200px;
-  min-width: 200px;
+  width: 220px;
+  min-width: 220px;
   background: var(--surface);
   border-right: 1px solid var(--border);
   display: flex;
