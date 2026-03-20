@@ -108,12 +108,14 @@ export default function Simulator() {
         <div className={styles.card} style={{ borderColor: 'var(--orange-border)', background: 'var(--orange-dim)' }}>
           <div className={styles.cardLabel} style={{ color: 'var(--orange)' }}>ARCHITECTURE NOTE</div>
           <p className={styles.desc} style={{ color: 'var(--text-dim)' }}>
-            This simulator replaces the Kafka consumer layer from the Powin Command Center architecture.
-            At Powin, a Spring Boot service consumed from Kafka topics published by the edge gateway.
-            Here, a Spring <code>@Scheduled</code> task writes directly to MongoDB on the same interval,
-            producing the same result: time-series telemetry documents per site per tick.
-            The repository interface, document schema, and REST layer are identical to what a real
-            Kafka consumer would produce.
+            This simulator replicates the data flow of a real BESS telemetry pipeline without requiring
+            physical hardware or a live network. In a production system, the edge gateway (the hardware
+            unit on-site) continuously publishes telemetry readings at a fixed interval to a messaging
+            broker (Kafka) — a pipeline that queues and delivers data between services. A Spring Boot
+            consumer service listens to that pipeline and writes each reading to MongoDB the moment it
+            arrives, with no polling or delay. Here, the simulator uses a Spring <code>@Scheduled</code> task
+            that fires at the same interval and writes directly to MongoDB, reproducing that behavior
+            without the broker in between.
           </p>
         </div>
       </div>
