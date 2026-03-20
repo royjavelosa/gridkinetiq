@@ -45,8 +45,8 @@ export default function Simulator() {
         <div className={styles.card}>
           <div className={styles.cardLabel}>TELEMETRY SIMULATOR</div>
           <p className={styles.desc}>
-            Controls the Spring Boot scheduled task that writes simulated telemetry to MongoDB.
-            In a production system, this data would come from the OEG edge gateway via MQTT.
+            Controls the Spring Boot scheduled task that generates simulated telemetry and writes it to MongoDB.
+            In a production system, this data would arrive from a physical edge gateway, published over MQTT to a message broker.
           </p>
 
           {status && (
