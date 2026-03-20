@@ -10,7 +10,7 @@ import styles from './Analytics.module.css'
 
 const COLORS = ['#f97316', '#22c55e', '#3b82f6', '#eab308', '#a855f7', '#06b6d4']
 
-export default function Analytics() {
+export default function Analytics({ onMenuClick }) {
   const [sites, setSites] = useState([])
   const [selectedSite, setSelectedSite] = useState(null)
   const [telemetry, setTelemetry] = useState([])
@@ -60,7 +60,7 @@ export default function Analytics() {
 
   return (
     <div className={styles.page}>
-      <Topbar title="Analytics" />
+      <Topbar title="Analytics" onMenuClick={onMenuClick} />
 
       <div className={styles.content}>
         {/* Fleet SOC bar chart */}

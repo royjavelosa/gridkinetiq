@@ -4,7 +4,7 @@ import Topbar from '../components/Topbar'
 import { formatTime } from '../utils/format'
 import styles from './Commands.module.css'
 
-export default function Commands() {
+export default function Commands({ onMenuClick }) {
   const [commands, setCommands] = useState([])
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function Commands() {
 
   return (
     <div className={styles.page}>
-      <Topbar title="Command Audit Log" />
+      <Topbar title="Command Audit Log" onMenuClick={onMenuClick} />
       <div className={styles.content}>
         <div className={styles.card}>
           <div className={styles.cardLabel}>RECENT COMMANDS — ALL SITES</div>

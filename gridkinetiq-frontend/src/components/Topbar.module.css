@@ -9,6 +9,28 @@
   padding: 0 24px;
 }
 
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menuBtn {
+  display: none;
+  color: var(--text-muted);
+  padding: 4px;
+}
+
+.menuBtn:hover {
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .menuBtn {
+    display: flex;
+  }
+}
+
 .title {
   font-family: var(--font-condensed);
   font-size: 16px;

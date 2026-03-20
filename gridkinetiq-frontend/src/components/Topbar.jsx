@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
+import { Menu } from 'lucide-react'
 import { getSimulatorStatus } from '../api/client'
 import styles from './Topbar.module.css'
 
-export default function Topbar({ title }) {
+export default function Topbar({ title, onMenuClick }) {
   const [time, setTime] = useState(new Date())
   const [simStatus, setSimStatus] = useState(null)
 
@@ -26,6 +27,9 @@ export default function Topbar({ title }) {
   return (
     <header className={styles.topbar}>
       <div className={styles.left}>
+        <button className={styles.menuBtn} onClick={onMenuClick} aria-label="Open menu">
+          <Menu size={20} />
+        </button>
         <span className={styles.title}>{title}</span>
       </div>
 

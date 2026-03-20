@@ -11,7 +11,7 @@ import styles from './SiteDetail.module.css'
 
 const COMMAND_TYPES = ['CHARGE', 'DISCHARGE', 'STANDBY', 'EMERGENCY_STOP', 'RESET_ALARMS']
 
-export default function SiteDetail() {
+export default function SiteDetail({ onMenuClick }) {
   const { id } = useParams()
   const navigate = useNavigate()
   const [site, setSite] = useState(null)
@@ -72,7 +72,7 @@ export default function SiteDetail() {
 
   return (
     <div className={styles.page}>
-      <Topbar title={site.name} />
+      <Topbar title={site.name} onMenuClick={onMenuClick} />
 
       <div className={styles.content}>
         {/* Back + header */}

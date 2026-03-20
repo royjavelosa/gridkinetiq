@@ -6,7 +6,7 @@ import { socColor, dispatchColor, statusColor, formatPower, formatCapacity, time
 import { AlertTriangle, Zap, Battery, Activity } from 'lucide-react'
 import styles from './Fleet.module.css'
 
-export default function Fleet() {
+export default function Fleet({ onMenuClick }) {
   const [sites, setSites] = useState([])
   const [summary, setSummary] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -34,7 +34,7 @@ export default function Fleet() {
 
   return (
     <div className={styles.page}>
-      <Topbar title="Fleet Overview" />
+      <Topbar title="Fleet Overview" onMenuClick={onMenuClick} />
 
       <div className={styles.content}>
         {/* Fleet summary strip */}

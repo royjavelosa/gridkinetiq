@@ -3,7 +3,7 @@ import { getSimulatorStatus, startSimulator, stopSimulator, setSimulatorMode } f
 import Topbar from '../components/Topbar'
 import styles from './Simulator.module.css'
 
-export default function Simulator() {
+export default function Simulator({ onMenuClick }) {
   const [status, setStatus] = useState(null)
   const [loading, setLoading] = useState(false)
 
@@ -39,7 +39,7 @@ export default function Simulator() {
 
   return (
     <div className={styles.page}>
-      <Topbar title="Simulator Control" />
+      <Topbar title="Simulator Control" onMenuClick={onMenuClick} />
 
       <div className={styles.content}>
         <div className={styles.card}>

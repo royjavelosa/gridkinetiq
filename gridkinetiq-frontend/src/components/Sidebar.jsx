@@ -9,9 +9,9 @@ const NAV = [
   { to: '/simulator', icon: Settings, label: 'Simulator' },
 ]
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, onClose }) {
   return (
-    <aside className={styles.sidebar}>
+    <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
       <div className={styles.logo}>
         <Zap size={20} color="var(--orange)" strokeWidth={2.5} />
         <span className={styles.logoText}>Grid<span className={styles.logoAccent}>Kinetiq</span></span>
@@ -23,6 +23,7 @@ export default function Sidebar() {
             key={to}
             to={to}
             end={to === '/'}
+            onClick={onClose}
             className={({ isActive }) =>
               `${styles.navItem} ${isActive ? styles.active : ''}`
             }
